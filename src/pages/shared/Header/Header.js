@@ -9,7 +9,7 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home">RIO AMBULANCE</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -17,7 +17,7 @@ const Header = () => {
                         <Nav className="ms-auto navbar-link">
                             <HashLink className="nav-link" to="/home#home">Home</HashLink>
                             <HashLink className="nav-link" to="/home#services">Services</HashLink>
-                            <Link className="nav-link" to="/home">About</Link>
+                            <Link className="nav-link" to="/about">About</Link>
                             <Link className="nav-link" to="/charges">RIO Charges</Link>
                             <HashLink className="nav-link" to="/home#contact">Contact</HashLink>
                             <HashLink className="nav-link" to="/home#offer">Offer</HashLink>
@@ -47,8 +47,6 @@ const Header = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -59,8 +57,6 @@ const Header = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -71,8 +67,6 @@ const Header = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
