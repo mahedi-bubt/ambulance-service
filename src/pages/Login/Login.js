@@ -1,27 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Login.css';
 import { Col, Form, Row, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
-    const { googleSignIn } = useAuth();
+    const { googleSignIn, logInUser } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const redirect_url = location?.state?.from || '/home';
+    console.log(redirect_url)
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                history.push(redirect_url);
+            })
+    }
+
+    const handleLogInForm = (e) => {
+        logInUser(email, password)
+            .then((result) => {
+
+            })
+        e.preventDefault();
+    }
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+    }
+
     return (
 
         <Container>
-            <div>
+            <div className="login-form">
                 <h2>LogIn Form</h2>
                 {/* <form>
                     <input type="email" name="" id="" placeholder="Enter Your Email..." /> <br />
                     <input type="password" name="" id="" placeholder="Enter Password.." /> <br />
                     <input type="submit" value="Submit" />
                 </form> */}
-                <Form>
+                <Form onSubmit={handleLogInForm}>
                     <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
                         <Form.Label column sm={2}>
                             Email
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="email" placeholder="Email" />
+                            <Form.Control onBlur={handleEmail} type="email" placeholder="Email" />
                         </Col>
                     </Form.Group>
 
@@ -30,7 +63,7 @@ const Login = () => {
                             Password
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="password" placeholder="Password" />
+                            <Form.Control onBlur={handlePassword} type="password" placeholder="Password" />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3">
@@ -42,7 +75,7 @@ const Login = () => {
 
                 <p>New User? <Link to="/registration">Create Account</Link></p>
                 <div>----------------- or ---------------</div>
-                <button onClick={googleSignIn}>Google Sign In</button>
+                <button onClick={handleGoogleSignIn}>Google Sign In</button>
             </div>
         </Container>
     );

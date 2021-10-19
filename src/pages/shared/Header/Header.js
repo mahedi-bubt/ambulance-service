@@ -20,15 +20,17 @@ const Header = () => {
                             <Link className="nav-link" to="/charges">RIO Charges</Link>
                             <Link className="nav-link" to="/contact">Contact</Link>
                         </Nav>
-                        <span className="nav-link">{user?.displayName}</span>
                         {
                             user?.email ?
-                                <button onClick={logOut} className="btn btn-dark">SignOut</button>
+                                <Link to="/home">
+                                    <button onClick={logOut} className="btn btn-dark">SignOut</button>
+                                </Link>
                                 :
                                 <Link to="/login">
                                     <button className="btn btn-dark">LogIn</button>
                                 </Link>
                         }
+                        <span className="nav-link">{user?.displayName}</span>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

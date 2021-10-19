@@ -12,10 +12,12 @@ import ServiceDetails from './pages/Home/ServiceDetails/ServiceDetails';
 import Registration from './pages/Registration/Registration';
 import About from './pages/About/About';
 import Charges from './pages/Charges/Charges';
+import NotFound from './pages/NotFound/NotFound';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
-    <div className="">
+    <div >
       <AuthProvider>
         <Router>
           <Header></Header>
@@ -32,12 +34,12 @@ function App() {
             <Route path="/about">
               <About></About>
             </Route>
-            <Route path="/charges">
+            <PrivateRoute path="/charges">
               <Charges></Charges>
-            </Route>
-            <Route path="/servicedetails/:s_id">
+            </PrivateRoute>
+            <PrivateRoute path="/servicedetails/:s_id">
               <ServiceDetails></ServiceDetails>
-            </Route>
+            </PrivateRoute>
             <Route path="/contact">
               <Contact></Contact>
             </Route>
@@ -46,6 +48,9 @@ function App() {
             </Route>
             <Route path="/registration">
               <Registration></Registration>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>

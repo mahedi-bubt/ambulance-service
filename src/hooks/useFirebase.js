@@ -2,7 +2,7 @@ import initializationApp from "../Firebase/firebase.init";
 import { } from 'firebase/app';
 import {
     getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut
-    , createUserWithEmailAndPassword
+    , createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 
@@ -14,23 +14,32 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const googleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user);
-            })
+        return signInWithPopup(auth, googleProvider)
+
     }
     //observe user auth state changed or not
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsuscriber = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
             }
         });
+        return unsuscriber;
     }, [])
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
 
+    }
+
+    const logInUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const updateUserDetails = (username) => {
+        return updateProfile(auth.currentUser, {
+            displayName: { username }
+        })
     }
 
     const logOut = () => {
@@ -42,7 +51,9 @@ const useFirebase = () => {
         user,
         googleSignIn,
         logOut,
-        createUser
+        createUser,
+        logInUser,
+        updateUserDetails
     }
 }
 export default useFirebase;

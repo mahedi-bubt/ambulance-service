@@ -1,29 +1,39 @@
 import React, { useState } from 'react';
+import { Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Registration.css';
 
 const Registration = () => {
-    const { createUser } = useAuth();
-
-    /* const [username, setUsername] = useState(''); */
+    const { createUser, updateUserDetails, user } = useAuth();
+    const [error, setError] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleRegistration = (e) => {
-        console.log(email, password)
+        /* console.log(email, password) */
+        createUser(email, password)
+            .then(result => {
+                console.log(result)
+            }).catch(err => {
+                setError(err);
+            });
+        updateUserName();
         e.preventDefault();
     }
-    const emailPasswordSingUp = () => {
-        createUser()
+    const updateUserName = () => {
+        updateUserDetails(username)
             .then(result => {
-                console.log(result);
-            })
+                console.log(result.username)
+            }).catch((error) => {
+
+            });
     }
 
-    /* const handleUserName = (e) => {
+    const handleUserName = (e) => {
         setUsername(e.target.value)
-    } */
+    }
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -33,16 +43,17 @@ const Registration = () => {
         setPassword(e.target.value)
     }
     return (
-        <div className=" form">
+        <div className=" form App">
+            {error && <Alert variant="danger">{error}</Alert>}
             <form onSubmit={handleRegistration}>
                 <h2>Sign Up!</h2>
                 <fieldset>
                     <legend>Create Account</legend>
                     <ul>
-                        {/* <li>
+                        <li>
                             <label htmlFor="username">Username:</label>
                             <input type="text" onChange={handleUserName} id="username" required />
-                        </li> */}
+                        </li>
                         <li>
                             <label htmlFor="email">Email:</label>
                             <input onChange={handleEmail} type="email" id="email" required />
@@ -53,10 +64,15 @@ const Registration = () => {
                         </li>
                     </ul>
                 </fieldset>
-                <button onClick={emailPasswordSingUp}>Submit</button>
-                <Link to="/login">
-                    <button className="account" type="button">Have an Account?</button>
-                </Link>
+                <div>
+                    <Link to="/home">
+                        <button>Submit</button>
+                    </Link>
+
+                    <Link to="/login">
+                        <button className="account" type="button">Have an Account?</button>
+                    </Link>
+                </div>
             </form>
         </div>
     );
