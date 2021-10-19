@@ -5,15 +5,15 @@
         "price": "800",
         "title": "Basic Life Support Ambulance is for the patients who need medical transportation.",
         "description": "These types of ambulances are the basic ambulances that we commonly see in our daily lives. Basic ambulances are handled by an emergency medical technician (EMT) and transport patients who require basic medical supervision under minor or uncritical situations such as mild fractures, and sub-acute care facilities (nursing homes). It comprises of the patient bed, pulse oximetry and oxygen delivery devices.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "img": "https://i.ibb.co/nf6htqz/service-05.png"
     },
     {
         "id": 2,
         "d_name": "Collective Ambulance",
         "price": "1200",
-        "title": "Collective ambulances is a type of ambulance that fits within non-medical ambulances or also called conventional ambulances.",
+        "title": "Collective ambulances is a type of ambulance that fits within non-medical ambulances or also called conventional.",
         "description": "Collective ambulances is a type of ambulance that fits within non-medical ambulances or also called conventional ambulances. These are vehicles for the collective transport of patients and are equipped for the joint transfer of patients whose transfer is not of an emergency nature, nor are they afflicted with infectious-contagious diseases.",
-        "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+        "img": "https://i.ibb.co/gZdDCWg/service-02.png"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "price": "1500",
         "title": "ALS ambulance is equipped with ventilator, ECG, monitoring devices and paramedic staff.",
         "description": "Advance ambulances are equipped with advanced equipment and tools to handle critically ill patients. They are also equipped with an ECG monitor, defibrillator, intravenous and blood drawing tools, etc. Patients who require a high level of care and who are fighting for life need services like hospital emergency department or critical care unit need advance ambulance services. Patients suffering from serious life-threatening causalities and cardiac emergencies are transported with advanced life support ambulances.",
-        "img": "https://i.ibb.co/Yh04YVw/3.jpg"
+        "img": "https://i.ibb.co/c6jjKnf/service-03.png"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "price": "2000",
         "title": "Mortuary ambulance services are used for the transportation of the dead body. It is also called as Hearse Van.",
         "description": "Orthopedics is a branch of medicine that focuses on the care of the musculoskeletal system. ... A person who specializes in orthopedics is known as an orthopedist. Orthopedists use both surgical and nonsurgical approaches to treat a variety of musculoskeletal issues, such as sports injuries, joint pain, and back problems.",
-        "img": "https://i.ibb.co/ZX2Cbkn/4.jpg"
+        "img": "https://i.ibb.co/gZdDCWg/service-02.png"
     },
     {
         "id": 5,
@@ -37,14 +37,14 @@
         "price": "1400",
         "title": "PTV is a non emergency patient transport vehicle equipped with patient bed & other life-support devices.",
         "description": "During non-emergency situations, Medical transport vehicle transfers patients to and from hospitals. A patient who requires to be transferred to a facility that can give a higher or more specialized level of care or used to transfer patients from a specialized facility to a hospital when they no longer require this specialized care.",
-        "img": "https://i.ibb.co/FgQ3jXp/5.jpg"
+        "img": "https://i.ibb.co/TbGpj2v/service-04.png"
     },
     {
         "id": 6,
         "d_name": "Air Ambulance",
         "price": "25000",
-        "title": "Air ambulances contain ventilators, defibrillators, infusion pumps, balloon pumps, oxygen cylinders, trained doctors, & nurses.",
+        "title": "Air ambulances contain ventilators, defibrillators, infusion pumps, balloon pumps, oxygen cylinders, trained.",
         "description": "Air ambulances use air transportation by airplane or helicopter to transport patients to and from healthcare facilities and accident scenes. Air ambulances transport patients to specialist care, they can also bring specialist care to the accident scene, especially for major trauma cases. They are mainly used for international or long-distance transport. Air medical services provide fast and swift transport during emergencies. They can reach wide or hilly areas in less time, they are more accessible than land ambulances. This makes them very efficient in sparsely populated rural regions.",
-        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+        "img": "https://i.ibb.co/HYHHc63/service-01.png"
     }
 ]

@@ -5,7 +5,7 @@ import Service from '../Service/Service';
 
 const Services = () => {
     const [services] = useServices();
-    console.log(services);
+    /* console.log(services); */
 
     const style = {
         services_container: {
@@ -25,14 +25,14 @@ const Services = () => {
         <div>
             <Container style={style.services_container}>
                 <div style={style.servicesTop}>
-                    <h2 className="text-primary">Our all Services</h2>
+                    <h2 className="text-primary text-center">Our all Services</h2>
                     <hr style={style.hr} />
                 </div>
                 <Row xs={1} md={3} className="g-4">
                     {
-                        services.map(service => <Service
-                            key='id'
-                            service={service}
+                        services.map(s_details => <Service
+                            key={s_details.id}
+                            service={s_details}
                         ></Service>)
                     }
                 </Row>
