@@ -22,7 +22,7 @@ const Services = () => {
     }
 
     return (
-        <div>
+        <div id="services">
             <Container style={style.services_container}>
                 <div style={style.servicesTop}>
                     <h2 className="text-primary text-center">Our all Services</h2>

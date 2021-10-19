@@ -15,7 +15,7 @@ const Offer = () => {
     }
     return (
         <Container>
-            <div>
+            <div id="offer">
                 <h2 style={style.h2}>What Do We Offer</h2>
                 <Row className="justify-content-md-center">
                     <Col md='auto'>

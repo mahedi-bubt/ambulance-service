@@ -3,19 +3,24 @@ import { Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Registration.css';
+import { useHistory, useLocation } from 'react-router'
 
 const Registration = () => {
-    const { createUser, updateUserDetails, user } = useAuth();
+    const { createUser, updateUserDetails } = useAuth();
     const [error, setError] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    /* const location = useLocation();
+    const history = useHistory();
+
+    const redirect_url = location?.state?.from || '/home'; */
 
     const handleRegistration = (e) => {
         /* console.log(email, password) */
         createUser(email, password)
             .then(result => {
-                console.log(result)
+                /* history.push(redirect_url); */
             }).catch(err => {
                 setError(err);
             });
@@ -25,7 +30,7 @@ const Registration = () => {
     const updateUserName = () => {
         updateUserDetails(username)
             .then(result => {
-                console.log(result.username)
+
             }).catch((error) => {
 
             });
@@ -65,10 +70,7 @@ const Registration = () => {
                     </ul>
                 </fieldset>
                 <div>
-                    <Link to="/home">
-                        <button>Submit</button>
-                    </Link>
-
+                    <button>Submit</button>
                     <Link to="/login">
                         <button className="account" type="button">Have an Account?</button>
                     </Link>

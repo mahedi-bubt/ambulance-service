@@ -5,7 +5,7 @@ import './About.css'
 const About = () => {
     return (
         <Container>
-            <div>
+            <div id="about">
                 <h2 className="text-center title">About Us</h2>
 
                 <p> Rio Ambulance is an online booking app to book an emergency ambulance, to transport the patient to a nearest hospital in the golden hour with just a click of a button.

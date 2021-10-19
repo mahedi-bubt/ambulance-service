@@ -13,7 +13,6 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
     const redirect_url = location?.state?.from || '/home';
-    console.log(redirect_url)
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -25,7 +24,7 @@ const Login = () => {
     const handleLogInForm = (e) => {
         logInUser(email, password)
             .then((result) => {
-
+                history.push(redirect_url);
             })
         e.preventDefault();
     }
@@ -43,11 +42,7 @@ const Login = () => {
         <Container>
             <div className="login-form">
                 <h2>LogIn Form</h2>
-                {/* <form>
-                    <input type="email" name="" id="" placeholder="Enter Your Email..." /> <br />
-                    <input type="password" name="" id="" placeholder="Enter Password.." /> <br />
-                    <input type="submit" value="Submit" />
-                </form> */}
+
                 <Form onSubmit={handleLogInForm}>
                     <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
                         <Form.Label column sm={2}>
