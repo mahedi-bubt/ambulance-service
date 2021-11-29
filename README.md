@@ -3,7 +3,7 @@
 Links
 [Visit Website](https://react-ambulance.web.app/)
 
-- I tried my best to be responsive.
-- My site is about Ambulance Services.
-- This site can be routed without reloading the page.
+- This project mainly focused user authentication. 
+- I use custom react-hooks for form validation. I also implemented private-route process.
+- Users only can see the services page.
 - i used a fake data.
